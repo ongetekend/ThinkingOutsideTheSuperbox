@@ -1,0 +1,63 @@
+PREREQUISITE LIBRARIES
+
+GMP and NTL.
+
+COMPILATION, INSTALLATION AND DELETION
+
+To compile and install, type:
+
+make && make install
+
+Afterwards, you will find the binaries in ``bin''. Running them should produce CSV files in ``data''.
+To delete all binaries and object files, type:
+
+make clean
+
+OVERVIEW
+
+				Rijndael	Saturnin	Spongent
+Hamming Weight			Yes		Yes		Yes
+Box Weight			Yes		Yes		Yes
+Box Partition			Yes		Yes		Partially
+Differential Trail Weight	Yes		Yes		Yes
+Linear Trail Weight		Yes		Yes		Yes
+Differential Weight		No		Yes		Yes
+Linear Approximation Weight	No		Yes		Yes
+Differential Trail Weight	No		Yes		No
+(Three rounds)			
+Linear Trail Weight 		No		Yes		No
+(Three rounds)			
+
+DATA FORMATS
+
+The CSV files encode the following:
+
+aes-hamming-superbox.txt => (hamming weight, not used, number of differences)
+aes-hamming-full.txt => (hamming weight, not used, number of differences)
+aes-box-superbox.txt => (box weight, not used, number of differences) 
+aes-box-full.txt => (box weight, not used, number of differences) 
+aes-differential-trail-superbox.txt => (differential weight, not used, number of differences)
+aes-differential-trail-full.txt => (differential weight, not used, number of differences)
+aes-linear-trail-superbox.txt => (abs value of correlation numerator, log2(correlation denominator), number of linear approximations)
+
+saturnin-hamming-superbox.txt => (hamming weight, not used, number of differences)
+saturnin-hamming-full.txt => (hamming weight, not used, number of differences)
+saturnin-box-superbox.txt => (box weight, not used, number of differences) 
+saturnin-box-full.txt => (box weight, not used, number of differences) 
+saturnin-differential-trail-superbox.txt => (differential weight, not used, number of differences)
+saturnin-differential-trail-full.txt => (differential weight, not used, number of differences)
+saturnin-linear-trail-superbox.txt => (abs value of correlation numerator, log2(correlation denominator), number of linear approximations)
+saturnin-linear-trail-full.txt => (abs value of correlation numerator, log2(correlation denominator), number of linear approximations)
+saturnin-differential-superbox.txt => (-log2(DP), not used, number of differentials)
+saturnin-correlation-superbox.txt => (abs value of numerator of correlation, number of linear approximations)
+saturnin-differential-trail-three-rounds_total.txt => (differential weight, number of differences)
+
+spongent-hamming-full.txt => (hamming weight, not used, number of differences)
+spongent-box-superbox.txt => (box weight, not used, number of differences) 
+spongent-box-full.txt => (box weight, not used, number of differences) 
+spongent-differential-trail-superbox.txt => (differential weight, not used, number of differences)
+spongent-differential-trail-full.txt => (differential weight, not used, number of differences)
+spongent-linear-trail-superbox.txt => (abs value of correlation numerator, log2(abs value of correlation denominator), number of linear approximations)
+spongent-linear-trail-full.txt => (abs value of correlation numerator, log2(abs value of correlation denominator), number of linear approximations)
+spongent-differential-superbox.txt => (-log2(DP), not used, number of differentials)
+spongent-correlation-superbox.txt => (abs value of numerator of correlation, number of linear approximations)
